@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+    <title>Document</title>
+
+    <script type="text/javascript" src="https://rss2json.com/gfapi.js"></script>
+    <script type="text/javascript">
+
+        google.load("feeds", "1");
+
+        function initialize() {
+            let feed = new google.feeds.Feed("http://rss.cnn.com/rss/edition.rss");
+            feed.load(function (result) {
+                if (!result.error) {
+                    let container = document.getElementById("feed");
+                    for (var i = 0; i < result.feed.entries.length; i++) {
+                        let entry = result.feed.entries[i];
+                        let div = document.createElement("div");
+                        let a = document.createElement("a");
+                        a.href = entry.link;
+                        a.text = entry.title;
+                        div.appendChild(a);
+                        container.appendChild(div);
+                    }
+                }
+            });
+        }
+        google.setOnLoadCallback(initialize);
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- FIRST COMPONENT = NAV-SIDEBAR-->
+        <div id="sidebar" class="nav">
+            <!--   NOTES 
+                - SUB AREAS
+                -ICONS???
+             -->
+            <div id="servicesAcc">
+                <h3 class="services accordion">Services</h3>
+                <div class="panel">
+                    <a href="https://www.toast.net/services/internetaccess">Internet Access</a>
+                    <a href="https://www.toast.net/services/hosting">Web Sites</a>
+                    <a href="https://www.toast.net/services/email/">Business Email</a>
+                    <a href="https://www.toast.net/services/emailmarketing">E-mail Marketing</a>
+                    <a href="https://www.toast.net/services/managed-security.asp">Managed Security</a>
+                    <a href="https://www.toast.net/services/apps">Toast.net Apps</a>
+                </div>
+            </div>
+            <div id="resourcesAcc">
+                <h3 class="resources accordion">Resources</h3>
+                <div class="panel">
+                    <a href="https://www2.toast.net/entertainment">Entertainment</a>
+                    <a href="https://www2.toast.net/games">Games</a>
+                    <a href="https://www.toast.net/kids">Family</a>
+                    <a href="https://www.toast.net/lifestyle">Lifestyle</a>
+                    <a href="https://www.toast.net/sports">Sports</a>
+                    <a href="http://www.toast.net/computing">Tech</a>
+                    <a href="http://www.toast.net/travel">Travel</a>
+                </div>
+            </div>
+            <div id="infoAcc">
+                <h3 class="info accordion">Info</h3>
+                <div class="panel">
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <img src="https://www.toast.net/gfx/toastlogo-158.png?id=1" class="logo-centered">
+
+
+        <main class="page-content">
+            <!--    NOTES
+                    -Adding a favorite website will display a logo link?
+            
+            -->
+            <!-- <h2 class="favsites">ADD FAVORITE WEBSITES</h2> -->
+            <div class="site-icons">
+                Site icons go here
+            </div>
+            <a href="https://www.accuweather.com/en/us/cleveland-oh/44113/weather-forecast/350127" class="aw-widget-legal">
+                <!--
+                By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
+                -->
+            </a>
+            <div id="awcc1533146276110" class="aw-widget-current" data-locationkey="350127" data-unit="f" data-language="en-us" data-useip="false"
+                data-uid="awcc1533146276110"></div>
+            <script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+            <h2 class="news">CNN NEWS</h2>
+            <div id="body">
+                <div id="feed"></div>
+            </div>
+
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=cleveland&t=&z=13&ie=UTF8&iwloc=&output=embed">
+                    </iframe>
+                </div>
+                <style>
+                    .mapouter {
+                        text-align: right;
+                        height: 500px;
+                        width: 600px;
+                    }
+
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 500px;
+                        width: 600px;
+                    }
+                </style>
+            </div>
+            <h2 class="ebay-search">E-BAYSEARCH?</h2>
+
+        </main>
+
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

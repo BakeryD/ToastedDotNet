@@ -1,0 +1,127 @@
+body {
+    background-color: rgba(52, 126, 255, 0.884);
+
+}
+
+img.logo-centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    height: auto;
+    width: 50%;
+    padding-top: 1em;
+    animation-name: expand;
+    animation-duration: 2.5s;
+    grid-area: logo;
+}
+
+@keyframes expand {
+    from {transform: scale(0);}
+    to { transform: scale(1);}
+}
+
+#wrapper {
+    display: grid;
+    grid-template-columns: .5fr 2fr .5fr;
+    grid-template-areas:
+    '.              logo            .' 
+    'nav-side       page-content    page-content';
+}
+
+#sidebar {
+    grid-area: nav-side;
+    background-color: rgba(121, 132, 151, 0.048);
+    margin-right: 1.3em;
+
+}
+
+#sidebar h3 {
+    margin-top: 0;
+    color: rgba(255, 255, 255, 0.637);
+}
+
+#top-menu {
+    grid-area: nav-top;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#top-menu a {
+    font-weight: bold;
+    margin-right: auto;
+}
+
+a:link {
+    color: rgba(97, 1, 1, 0.726);
+}
+
+a:visited {
+    color: rgba(97, 1, 1, 0.726);
+}
+/***    Weather Widget    ***/
+div#awcc1533146276110 {
+    padding-top: 2em;
+    padding-right: 4.5em;
+}
+
+a#link_get_widget {
+    display: none;
+}
+
+main {
+    grid-area: page-content;
+}
+
+iframe.news {
+    height: 439px;
+    width: 850px; 
+    overflow: scroll;
+}
+
+.news ~ #body{
+    margin-bottom: 2em;
+    margin-left: 3em;
+}
+
+.panel {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.65s ease-out;
+    margin-bottom: 20px;
+}
+
+.panel a {
+    width: 90%;
+    margin: .3em 0;
+    color: rgb(188, 170, 143);
+    font-weight: bold;
+}
+
+.accordion {
+    cursor: pointer;
+    padding: 18px;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+ }
+
+.active, .accordion:hover {
+    background-color: rgba(204, 204, 204, 0.404);
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}       
+
+.active:after {
+    content: "\2212";
+}
