@@ -125,3 +125,30 @@ iframe.news {
 .active:after {
     content: "\2212";
 }
+
+div.site-icons {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+img[alt='Bing-logo'] {
+    height: 3em;
+    margin: 0.3em 1.5em 0 6.3em;
+}
+
+img[alt='Yahoo!'] {
+    height: 1.73em;
+    margin-top: 1em;
+    margin-left: 2em;
+}
+
+form p a img {
+    vertical-align: middle;
+    height: 1.6em;
+}
+
+form p a {
+    text-decoration: none;
+}
+
+
